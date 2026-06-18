@@ -18,7 +18,7 @@ A car is due for an oil change if **either** condition is true:
 
 ### 1. Clone the repository
 ```bash
-git clone [https://github.com/ikechukwuakuma316/oil-change-checker.git
+git clone https://github.com/ikechukwuakuma316/oil-change-checker.git
 cd oil-change-checker
 
 
