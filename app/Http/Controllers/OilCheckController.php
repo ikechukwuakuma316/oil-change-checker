@@ -40,8 +40,8 @@ class OilCheckController extends Controller
         ]);
 
         $kmSinceLast = $validated['current_odometer'] - $validated['previous_oil_change_odometer'];
-        $monthsSinceLast = Carbon::parse($validated['previous_oil_change_date'])->diffInMonths(Carbon::now());
-        $isDue = $kmSinceLast > 5000 || $monthsSinceLast > 6;
+        $isDue = $kmSinceLast > 5000
+            || Carbon::parse($validated['previous_oil_change_date'])->addMonths(6)->isPast();
 
         $oilCheck = OilCheck::create([
             'current_odometer'             => $validated['current_odometer'],
